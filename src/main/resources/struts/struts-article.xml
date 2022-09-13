@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="config" namespace="/" extends="struts-default">
+        <result-types>
+            <result-type name="tiles"
+                         class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+        <!--<action name="index">
+            <result>/index.jsp</result>
+        </action>-->
+    </package>
+    <package name="public" namespace="/public" extends="config">
+
+        <!-- Welcome Page -->
+        <action name="welcome" class="com.mb.web.action.WelcomeAction">
+            <param name="action">viewAction</param>
+            <result name="success" type="tiles">welcome.page</result>
+        </action>
+
+        <!-- Help -->
+        <action name="about" class="com.mb.web.action.AboutAction">
+            <param name="action">viewAction</param>
+            <result name="success" type="tiles">about.page</result>
+        </action>
+
+    </package>
+</struts>

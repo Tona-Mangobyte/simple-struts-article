@@ -1,0 +1,165 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>simple-struts-article</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>simple-struts-article Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <javaxservlet.version>3.1.0</javaxservlet.version>
+    <jfreechart.version>1.0.19</jfreechart.version>
+
+    <taglibs-standard.version>1.1.2</taglibs-standard.version>
+
+    <struts2.version>2.3.20</struts2.version>
+    <struts2-jquery.version>3.7.1</struts2-jquery.version>
+    <struts2-bootstrap.version>2.0.1</struts2-bootstrap.version>
+
+    <spring-framework.version>4.1.6.RELEASE</spring-framework.version>
+
+    <log4j2.version>2.17.0</log4j2.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${javaxservlet.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jfree</groupId>
+      <artifactId>jfreechart</artifactId>
+      <version>${jfreechart.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>${taglibs-standard.version}</version>
+    </dependency>
+
+    <!-- Struts -->
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-core</artifactId>
+      <version>${struts2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-config-browser-plugin</artifactId>
+      <version>${struts2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-tiles-plugin</artifactId>
+      <version>${struts2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-junit-plugin</artifactId>
+      <version>${struts2.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-spring-plugin</artifactId>
+      <version>${struts2.version}</version>
+    </dependency>
+    <!-- Struts Jquery: http://code.google.com/p/struts2-jquery/ -->
+    <!-- FAQ: http://code.google.com/p/struts2-jquery/wiki/FAQ -->
+    <dependency>
+      <groupId>com.jgeppert.struts2.jquery</groupId>
+      <artifactId>struts2-jquery-plugin</artifactId>
+      <version>${struts2-jquery.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.jgeppert.struts2.bootstrap</groupId>
+      <artifactId>struts2-bootstrap-plugin</artifactId>
+      <version>${struts2-bootstrap.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${log4j2.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>simple-struts-article</finalName>
+    <resources>
+      <resource>
+        <directory>src/main/resources/conf</directory>
+        <filtering>true</filtering>
+      </resource>
+      <resource>
+        <directory>src/main/resources/spring</directory>
+        <filtering>true</filtering>
+      </resource>
+      <resource>
+        <directory>src/main/resources/struts</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.3.1</version>
+        <configuration>
+          <doclint>none</doclint>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

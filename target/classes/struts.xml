@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+  	<constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+  	<constant name="struts.devMode" value="false"/>
+	<constant name="struts.action.extension" value="do" />
+
+	<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+
+  	<include file="struts-article.xml"/>
+    
+</struts>
